@@ -1,0 +1,19 @@
+<app-add-task
+  (onAddTask)="addTask($event)"
+  (updateTask)="updateTask($event)"
+></app-add-task>
+<div class="sort-buttons" style="margin-bottom: 1em;">
+  <button (click)="setSort('dateDue')" [disabled]="sortBy === 'dateDue'">Sort by Date Due</button>
+  <button (click)="setSort('dateAdded')" [disabled]="sortBy === 'dateAdded'">Sort by Date Added</button>
+  <button (click)="setSort('priority')" [disabled]="sortBy === 'priority'">Sort by Priority</button>
+</div>
+<app-task-item 
+  *ngFor="let task of sortedTasks" 
+  [task]="task"
+  [isEditing]="editingTaskId === task.id"
+  [editTask]="editingTaskId === task.id ? editingTask : null"
+  (onEditTask)="onEditTask($event)"
+  (onDeleteTask)="deleteTask($event)"
+  (onToggleReminder)="toggleReminder($event)"
+  (onUpdateTask)="updateTask($event)"
+></app-task-item>

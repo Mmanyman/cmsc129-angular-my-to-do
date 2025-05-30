@@ -1,0 +1,24 @@
+<form *ngIf="showAddTask" class="add-form" (ngSubmit)="onSubmit()">
+  <div class="form-control">
+    <label for="text">Task</label>
+    <input type="text" name="text" [(ngModel)]="text" id="text" placeholder="Add Task" required/>
+  </div>
+  <div class="form-control">
+    <label for="date">Date Due</label>
+    <input type="datetime-local" name="date" [(ngModel)]="date" id="date" required/>
+  </div>
+  <div class="form-control">
+    <label for="priority">Priority</label>
+    <select name="priority" [(ngModel)]="priority" id="priority">
+      <option value="Select" selected disabled>Select Level</option>
+      <option value="High">High</option>
+      <option value="Medium">Medium</option>
+      <option value="Low">Low</option>
+    </select>
+  </div>
+  <div class="form-control checkbox-label">
+    <input type="checkbox" name="completed" [(ngModel)]="completed" id="completed"/>
+    <label for="completed">Completed</label>    
+  </div>
+  <button type="submit" class="btn btn-block">{{ editTask ? "Update Task" : "Add Task"}}</button>
+</form>

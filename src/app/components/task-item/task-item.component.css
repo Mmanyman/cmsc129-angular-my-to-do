@@ -1,0 +1,73 @@
+.task {
+  background: #fff;
+  border-radius: 8px;
+  margin: 1em 0;
+  padding: 1.2em 1.5em;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+  border-left: 8px solid #e0e0e0;
+  transition: box-shadow 0.2s, border-color 0.2s;
+  position: relative;
+}
+
+.task.high {
+  border-left-color: #e53935;
+}
+
+.task.medium {
+  border-left-color: #fbc02d;
+}
+
+.task.low {
+  border-left-color: #43a047;
+}
+
+.task.reminder {
+  color: #888 !important;
+  text-decoration: line-through;
+  background: #f3f3f3;
+  opacity: 0.85;
+}
+
+.task h3 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 1.2em;
+  margin: 0 0 0.5em 0;
+}
+
+.task fa-icon {
+  cursor: pointer;
+  margin-left: 0.7em;
+  transition: color 0.2s;
+  align-self: right;
+}
+
+.task fa-icon:hover {
+  color: #1976d2;
+}
+
+.icon {
+  display: flex;
+  margin-left: auto;
+  gap: 0.7em;
+}
+
+.task p {
+  margin: 0.2em 0;
+  font-size: 0.98em;
+  color: #444;
+}
+
+.task p fa-icon {
+  margin-right: 0.5em;
+  vertical-align: middle;
+}
+
+app-add-task {
+  margin-top: 1em;
+  background: #f9f9f9;
+  border-radius: 6px;
+  padding: 1em;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+}

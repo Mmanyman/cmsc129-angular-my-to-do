@@ -1,0 +1,28 @@
+<div class="task" [ngClass]="[task.priority == 'High' ? 'high' : task.priority == 'Medium' ? 'medium' : 'low', task.completed ? 'reminder' : '']"
+    (dblclick)="onToggle(task)">
+    <h3>
+      <input type="checkbox" 
+        [checked]="task.completed" 
+        (change)="onToggle(task)">
+      {{ task.text }}
+      <span class="icons">
+        <fa-icon 
+          [icon]="faEdit"
+          (click)="onEdit(task)">
+        </fa-icon> 
+        <fa-icon 
+          (click)="(onDelete(task))"
+          [ngStyle]="{'color': 'red'}"
+          [icon]="faTimes">
+        </fa-icon>
+      </span>
+    </h3>
+    <p><fa-icon [icon]="faCalendarCheck"></fa-icon>Date Due: {{ task.dateDue | date:'medium' }}</p>
+    <p><fa-icon [icon]="faCalendar"></fa-icon>Date Created: {{ task.dateAdded | date:'medium' }}</p>
+    <p><fa-icon [icon]="faExclamation"></fa-icon>Priority Level: {{ task.priority }}</p>
+  <app-add-task *ngIf="isEditing" 
+    (updateTask)="onUpdate($event)"
+    [editTask]="editTask">
+  </app-add-task>
+</div>
+

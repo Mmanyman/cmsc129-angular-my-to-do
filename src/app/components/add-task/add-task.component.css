@@ -1,0 +1,63 @@
+.form-control {
+  margin-bottom: 1em;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-control label {
+  font-weight: 500;
+  margin-bottom: 0.3em;
+  color: #333;
+}
+
+.form-control input[type="text"],
+.form-control input[type="datetime-local"],
+.form-control select {
+  padding: 0.5em 0.7em;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1em;
+  background: #fafafa;
+  transition: border-color 0.2s;
+}
+
+.form-control input[type="text"]:focus,
+.form-control input[type="datetime-local"]:focus,
+.form-control select:focus {
+  border-color: #1976d2;
+  outline: none;
+}
+
+.form-control select {
+  cursor: pointer;
+}
+
+.form-control input[type="checkbox"] {
+  accent-color: #1976d2;
+  width: 1.1em;
+  height: 1.1em;
+  margin-right: 0.5em;
+  vertical-align: middle;
+}
+
+.form-control.checkbox-label {
+  flex-direction: row;
+  align-items: center;
+  margin-top: 0.5em;
+  font-size: 1em;
+}
+
+:host {
+  display: block;
+  background: transparent;
+  box-shadow: none;
+  border-radius: 0;
+  padding: 0;
+}
+
+.add-form {
+  background: transparent;
+  box-shadow: none;
+  border-radius: 0;
+  padding: 0;
+}
